@@ -7,7 +7,7 @@
         android:clipToPadding="false">
 
     <TextView
-            android:text="Откуда играть музыку?"
+            android:text="@string/where_to_play_music"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView" android:layout_marginTop="8dp"
@@ -18,7 +18,7 @@
             android:textColor="@android:color/black" app:layout_constraintHorizontal_bias="0.512"
             app:layout_constraintVertical_bias="0.386"/>
     <TextView
-            android:text="Выберите папку с аудиозаписями"
+            android:text="@string/choose_audio_folder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/chooseAudioDirectory" android:layout_marginTop="8dp"
@@ -30,8 +30,8 @@
 
 
     <Button
-            android:text="Выбрать папку"
-            android:background="@drawable/rounded_button"
+            android:text="@string/to_choose_directory"
+            android:background="@drawable/rounded_button_selector"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/choosingDirectory"
@@ -43,9 +43,10 @@
             android:textColor="@android:color/white"
             android:textSize="15sp"
             android:textAllCaps="false"
+            android:stateListAnimator="@animator/button_selector_height"
+            android:elevation="6dp"
             app:layout_constraintHorizontal_bias="0.498" app:layout_constraintVertical_bias="0.04"
-            style="@android:style/Widget.Button" android:textStyle="normal"
-            android:textAppearance="@style/TextAppearance.AppCompat.Button"/>
+    />
 
 
 </android.support.constraint.ConstraintLayout>

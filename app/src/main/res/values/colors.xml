@@ -7,5 +7,6 @@
     <color name="blueDark">#408BE0</color>
     <color name="mainBackground">#ebedf0</color>
     <color name="mainDarkBackground">#cfd1d3</color>
+    <color name="shadowColor">#E0E0E0</color>
     <color name="darkText">#71757A</color>
 </resources>

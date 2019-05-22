@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">MusicPlayer</string>
+    <string name="where_to_play_music">Откуда играть музыку?</string>
+    <string name="choose_audio_folder">Выберите папку с аудиозаписями</string>
+    <string name="to_choose_directory">Выбрать папку</string>
 </resources>

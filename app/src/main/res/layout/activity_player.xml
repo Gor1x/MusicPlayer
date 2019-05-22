@@ -8,6 +8,6 @@
         android:layout_height="match_parent"
         android:background="#607D8B"
         android:fitsSystemWindows="true"
-        tools:context=".PlayerActivity">
+        tools:context=".activities.PlayerActivity">
 
 </android.support.constraint.ConstraintLayout>
