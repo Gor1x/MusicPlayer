@@ -29,7 +29,7 @@
 
         <activity
                 android:name=".activities.PlayerActivity"
-                android:theme="@style/Theme.Design.NoActionBar">
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -37,7 +37,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.ChooseFolderActivity">
+        <activity android:name=".activities.filesystem.ChooseFolderActivity"
+                  android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
 
     </application>
