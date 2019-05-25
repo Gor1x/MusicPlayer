@@ -16,11 +16,11 @@ import java.util.*
 
 class ChooseFolderActivity : AppCompatActivity(), FilesAdapter.OnListClick {
 
-    var filesList: ArrayList<FileName> = ArrayList()
+    private var filesList: ArrayList<FileName> = ArrayList()
     private var adapter = FilesAdapter(filesList, this)
     private var path = "/"
     private var startPath = path
-    private var snackbar: Snackbar? = null
+    private lateinit var snackbar: Snackbar;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,7 +73,7 @@ class ChooseFolderActivity : AppCompatActivity(), FilesAdapter.OnListClick {
 
         adapter.setData(filesList)
         adapter.notifyDataSetChanged()
-        snackbar!!.dismiss()
+        snackbar.dismiss()
 
     }
 
@@ -95,7 +95,7 @@ class ChooseFolderActivity : AppCompatActivity(), FilesAdapter.OnListClick {
                 refreshData()
             }
         } else {
-            snackbar!!.show()
+            snackbar.show()
         }
     }
 
