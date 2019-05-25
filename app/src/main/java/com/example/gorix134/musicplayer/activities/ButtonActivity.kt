@@ -23,9 +23,7 @@ class ButtonActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        if (getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
-                .getString(PATH_KEY, "") != ""
-        ) {
+        if (getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE).getString(PATH_KEY, "") != "") {
             finish()
         }
     }
