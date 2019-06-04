@@ -5,6 +5,7 @@ import PATH_KEY
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import com.example.gorix134.musicplayer.R
 import com.example.gorix134.musicplayer.activities.filesystem.ChooseFolderActivity
@@ -23,8 +24,17 @@ class ButtonActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        if (getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE).getString(PATH_KEY, "") != "") {
+        if (isCorrectPath()) {
             finish()
         }
+    }
+
+    private fun isCorrectPath(): Boolean {
+        return getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE).getString(PATH_KEY, "") != ""
+    }
+
+    override fun onBackPressed() {
+        Snackbar.make(constraintButtonActivity, "Вы не можете вернуться, не выбрав папку", Snackbar.LENGTH_SHORT)
+            .show()
     }
 }

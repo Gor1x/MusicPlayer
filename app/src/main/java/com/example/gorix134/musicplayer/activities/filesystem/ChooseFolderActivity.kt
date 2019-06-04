@@ -20,7 +20,7 @@ class ChooseFolderActivity : AppCompatActivity(), FilesAdapter.OnListClick {
     private var adapter = FilesAdapter(filesList, this)
     private var path = "/"
     private var startPath = path
-    private lateinit var snackbar: Snackbar;
+    private lateinit var snackbar: Snackbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,11 +35,27 @@ class ChooseFolderActivity : AppCompatActivity(), FilesAdapter.OnListClick {
         refreshData()
 
         floatingActionButton.setOnClickListener {
-            val preferences = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
-            val editor = preferences.edit()
-            editor.putString(PATH_KEY, path).apply()
-            finish()
+            if (isCorrect(path)) {
+                val preferences = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
+                val editor = preferences.edit()
+                editor.putString(PATH_KEY, path).apply()
+                finish()
+            } else {
+                Snackbar.make(
+                    layoutChooseFolder,
+                    "Вы не можете выбрать директорию без mp3",
+                    Snackbar.LENGTH_SHORT
+                ).show()
+            }
         }
+    }
+
+    private fun isCorrect(path: String): Boolean {
+        val directory = File(path)
+        val files = directory.listFiles { file, s ->
+            s.toLowerCase().endsWith("mp3")
+        }
+        return !(files == null || files.isEmpty())
     }
 
     private fun refreshData() {
